@@ -1,0 +1,2 @@
+Includes saved fields and checklist in saved-entries.json.
+Extract and open index.html. If needed, use Import saved answers.

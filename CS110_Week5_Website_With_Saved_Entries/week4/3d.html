@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS110 • Interactive 3D View</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <a class="back-link" href="../index.html">← Back to the CS110 dashboard</a>
+    <header class="scene-header">
+      <div>
+        <span class="eyebrow">WEEK 4 3D TEMPLATE</span>
+        <h1>My Interactive 3D View</h1>
+        <p id="scene-description">A customizable Babylon.js practice scene. Edit the JavaScript values to make the scene represent your app theme.</p>
+      </div>
+      <span class="scene-badge">Babylon.js</span>
+    </header>
+
+    <section class="scene-card" aria-label="Interactive 3D scene">
+      <p id="scene-status" role="status">Loading the scene…</p>
+      <canvas id="renderCanvas" tabindex="0"
+        aria-label="Interactive 3D practice scene"
+        aria-describedby="scene-description scene-controls">
+        The practice scene contains a sphere and a ground plane.
+      </canvas>
+      <div class="scene-controls" id="scene-controls">
+        <span>🖱 Drag to look around</span>
+        <span>⌨ Use arrow keys while focused</span>
+        <span>↺ Reset returns the camera to the starting view</span><span>✦ Try the sphere explosion animation</span>
+      </div>
+      <div class="action-row"><button id="explode-sphere" type="button" disabled>✦ Explode sphere</button><button id="reassemble-sphere" type="button" disabled>↻ Reassemble</button><button id="reset-view" type="button" disabled>Reset view</button></div>
+    </section>
+
+    <section class="scene-notes">
+      <h2>What this page demonstrates</h2>
+      <div class="mini-grid">
+        <div><strong>HTML</strong><p>Provides the page structure and canvas where the 3D scene appears.</p></div>
+        <div><strong>CSS</strong><p>Controls the visual layout, spacing, typography, and scene container.</p></div>
+        <div><strong>JavaScript</strong><p>Creates the Babylon.js scene, camera, light, objects, and interaction.</p></div>
+        <div><strong>3D template</strong><p>Supplies a working starting point that can be adapted to the theme of the app.</p></div>
+      </div>
+    </section>
+
+    <noscript><p>JavaScript is disabled. Enable it to run the 3D scene.</p></noscript>
+  </main>
+  <script src="vendor/babylon.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

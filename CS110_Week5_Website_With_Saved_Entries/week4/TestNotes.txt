@@ -1,0 +1,22 @@
+Week 4 experiments
+Pathway:
+Website / 3D page:
+
+Experiment
+What I expected:
+File and code/value I changed:
+What I observed (or exact error):
+What I kept, restored, or corrected:
+My next test:
+
+Changes I made:
+
+Future tests and ideas:
+
+Final checks
+Website -> 3D page -> website:
+Scene and description agree:
+Narrow and wide layout:
+Keyboard navigation:
+Console errors / unresolved issues:
+Peer observation and correction:

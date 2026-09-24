@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS110 • Week 5 Project Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="hero" id="top">
+  <nav class="nav shell" aria-label="Main navigation">
+    <a class="brand" href="#top"><span class="brand-mark">CS</span><span>CS110 <b>Studio</b></span></a>
+    <div class="nav-links">
+      <a href="#recap">Week 1–4</a>
+      <a href="#app">5A / 5B</a>
+      <a href="#testing">Testing</a>
+      <a href="#submit">Submit</a>
+    </div>
+  </nav>
+  <div class="shell hero-grid">
+    <div>
+      <span class="eyebrow">WEEK 5 • PROJECT WORKSPACE</span>
+      <h1>Build it. Explain it.<br><em>Show your process.</em></h1>
+      <p class="hero-copy">A single place for your Week 1–4 recap, themed app, 3D connection, testing evidence, Discord explanation, and final submission links.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#recap">Start the recap ↓</a>
+        <a class="btn ghost" href="week4/3d.html" target="_blank" rel="noopener">Open 3D view ↗</a>
+        <button class="btn ghost" id="exportWebsite" type="button">Export full website + entries ↓</button>
+        <button class="btn ghost" id="exportData" type="button">Export answers (JSON)</button>
+        <label class="btn ghost import-button" for="importDataFile">Import saved answers ↑</label>
+        <input id="importDataFile" type="file" accept="application/json,.json" hidden>
+      </div>
+      <p class="export-status" id="exportStatus" role="status" aria-live="polite"></p>
+    </div>
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div>
+      <div class="orbit-core">CS<br><span>110</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="shell section" id="recap">
+  <div class="section-heading">
+    <div><span class="eyebrow">PART 01</span><h2>Explain Week 1–4</h2></div>
+    <p>Four quick stops that tell a newcomer what you learned and how the pieces connect.</p>
+  </div>
+  <div class="stops">
+    <article class="stop reveal"><div class="stop-num">01</div><div class="icon">🧭</div><h3>Mindset + support</h3><p>Learning web development is iterative: try, inspect, revise, and ask for help. A mistake is useful information when you can explain what you tried and what happened.</p><div class="diagram mindset"><span>TRY</span><i>→</i><span>TEST</span><i>→</i><span>REVISE</span></div><label>Your analogy / explanation<textarea data-save="recap1" placeholder="Explain this stop in your own words…"></textarea></label></article>
+    <article class="stop reveal"><div class="stop-num">02</div><div class="icon">🎭</div><h3>Story + genre + hats</h3><p>A story gives the project a purpose. Genre sets expectations for the kind of experience. The Visual, Logical, and Data hats are different ways to inspect the same project: appearance, behavior, and information.</p><div class="diagram hats"><span>VISUAL</span><span>LOGICAL</span><span>DATA</span></div><label>Your analogy / explanation<textarea data-save="recap2" placeholder="Explain the three hats or another class analogy…"></textarea></label></article>
+    <article class="stop reveal"><div class="stop-num">03</div><div class="icon">🧩</div><h3>Web tools + reusable code</h3><p>HTML structures content, CSS styles it, and JavaScript adds behavior. VS Code is the workspace; Git/GitHub tracks and shares versions. A reusable npm package is like a shelf item: your project can use code someone already packaged instead of rebuilding that capability from scratch.</p><div class="diagram code-stack"><span>HTML</span><span>CSS</span><span>JS</span><b>+</b><span class="package">📦 PACKAGE</span></div><label>Your explanation<textarea data-save="recap3" placeholder="Explain how the tools or a reusable package fit together…"></textarea></label></article>
+    <article class="stop reveal"><div class="stop-num">04</div><div class="icon">🌐</div><h3>Browser + name server + server</h3><p>The browser requests a website. A name system such as DNS helps translate a domain name into an address. The server sends back the requested files or data, and the browser turns them into the page you see.</p><div class="diagram network"><span>Browser</span><i>→</i><span>DNS</span><i>→</i><span>Server</span><i>→</i><span>Page</span></div><label>Your explanation<textarea data-save="recap4" placeholder="Describe the request/response flow…"></textarea></label></article>
+  </div>
+  <div class="resource-callout"><strong>Week 5 resource:</strong> Read the class “package shelf” npm analogy. Using npm in your app is optional. <a href="https://courses.addp2p.com/assignments/cs110/week5/resources/npm-explained.html" target="_blank" rel="noopener">Open npm explanation ↗</a></div>
+</section>
+
+<section class="shell section" id="app">
+  <div class="section-heading"><div><span class="eyebrow">PART 02</span><h2>5A → 5B • Build the themed app</h2></div><p>Use the fields below as your project notebook. Your entries save in this browser.</p></div>
+  <div class="app-grid">
+    <article class="panel"><span class="tag">5A • PLAN</span><h3>Give the app a purpose</h3>
+      <label>App / project name<input data-save="appName" placeholder="e.g. Study Sprint"></label>
+      <label>Audience<input data-save="audience" placeholder="Who is this for?"></label>
+      <label>Purpose<textarea data-save="purpose" placeholder="What should the app help the audience do?"></textarea></label>
+      <label>Theme<input data-save="theme" placeholder="Visual or subject theme"></label>
+      <label>First action → visible result<textarea data-save="whiteboard" placeholder="Example: Click Start → timer appears and begins counting."></textarea></label>
+      <label>GitHub repository<input data-save="github" placeholder="https://github.com/..."></label>
+    </article>
+    <article class="panel accent"><span class="tag">5B • CONNECT</span><h3>Make the pieces work together</h3>
+      <label>Useful JavaScript interaction<textarea data-save="interaction" placeholder="What does the user do, and what visibly changes?"></textarea></label>
+      <label>3D adaptation<textarea data-save="threeDChange" placeholder="What object, label, size, or setting did you adapt?"></textarea></label>
+      <label>HTML does…<textarea data-save="htmlRole" placeholder="Your explanation"></textarea></label>
+      <label>CSS does…<textarea data-save="cssRole" placeholder="Your explanation"></textarea></label>
+      <label>JavaScript does…<textarea data-save="jsRole" placeholder="Your explanation"></textarea></label>
+      <label>3D template does…<textarea data-save="threeDRoles" placeholder="Your explanation"></textarea></label>
+    </article>
+  </div>
+  <div class="threeD-embed panel">
+    <div class="embed-head"><div><span class="tag">LIVE 3D</span><h3>Your Week 4 scene</h3><p>The supplied Babylon.js scene is included in this project and embedded below.</p></div><a class="btn small" href="week4/3d.html" target="_blank" rel="noopener">Open full view ↗</a></div>
+    <iframe src="week4/3d.html" title="CS110 Week 4 interactive 3D view" loading="lazy"></iframe>
+  </div>
+</section>
+
+<section class="shell section" id="testing">
+  <div class="section-heading"><div><span class="eyebrow">PART 03</span><h2>R4 • Test, revise, explain</h2></div><p>Capture the evidence your final checkpoint needs.</p></div>
+  <div class="check-grid">
+    <article class="panel checklist">
+      <span class="tag">TEST CHECK</span><h3>Run the app like a visitor</h3>
+      <label class="check"><input type="checkbox" data-check="links"> App + 3D links work</label>
+      <label class="check"><input type="checkbox" data-check="desktop"> Desktop layout checked</label>
+      <label class="check"><input type="checkbox" data-check="narrow"> Narrow/mobile layout checked</label>
+      <label class="check"><input type="checkbox" data-check="keyboard"> Keyboard access checked</label>
+      <label class="check"><input type="checkbox" data-check="console"> Browser console checked</label>
+      <label>Peer tester<textarea data-save="peer" placeholder="Who tested it, and what did they try?"></textarea></label>
+      <label>Unclear part found<textarea data-save="unclear" placeholder="What confused your peer?"></textarea></label>
+      <label>Revision made<textarea data-save="revision" placeholder="What did you change afterward?"></textarea></label>
+    </article>
+    <article class="panel discord">
+      <span class="tag">DISCORD</span><h3>Explain your work</h3>
+      <p>Prepare a short post containing your theme, app, one recap analogy, and one tested change.</p>
+      <label>Discord post link<input data-save="discordLink" placeholder="Paste the link to your post"></label>
+      <label>Post text / notes<textarea data-save="discordText" placeholder="Paste or draft your explanation here…"></textarea></label>
+      <label>Screenshot / evidence link<input data-save="discordEvidence" placeholder="Optional image or evidence URL"></label>
+    </article>
+  </div>
+</section>
+
+<section class="shell section" id="submit">
+  <div class="section-heading"><div><span class="eyebrow">PART 04</span><h2>R5 • Final submission</h2></div><p>Keep the required materials together, push the final version, and test instructor access.</p></div>
+  <div class="submit-layout">
+    <article class="panel">
+      <span class="tag">FINAL CHECKLIST</span><h3>Repository contents</h3>
+      <label class="check"><input type="checkbox" data-check="finalRecap"> Visual Week 1–4 recap</label>
+      <label class="check"><input type="checkbox" data-check="finalApp"> App source</label>
+      <label class="check"><input type="checkbox" data-check="final3d"> 3D page + files</label>
+      <label class="check"><input type="checkbox" data-check="finalTest"> Test note</label>
+      <label class="check"><input type="checkbox" data-check="finalEvidence"> 5A/5B whiteboard + peer evidence</label>
+      <label class="check"><input type="checkbox" data-check="finalDiscord"> Discord explanation/evidence</label>
+      <label class="check"><input type="checkbox" data-check="finalReceipt"> Selection receipt</label>
+    </article>
+    <article class="panel final-form">
+      <span class="tag">SUBMIT THESE LINKS</span>
+      <label>GitHub URL<input data-save="finalGithub" placeholder="https://github.com/..."></label>
+      <label>Working site link<input data-save="siteLink" placeholder="https://..."></label>
+      <label>Selection receipt<input data-save="receipt" placeholder="Link or location of receipt"></label>
+      <label>Instructor access tested<input data-save="instructorAccess" placeholder="Yes / No + note"></label>
+      <div class="completion"><span id="completionPercent">0%</span><div class="meter"><i id="meterFill"></i></div><small id="completionText">0 of 12 checklist items complete</small></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="shell"><strong>CS110 Studio</strong><span>•</span><span>Your workspace • Your evidence • Your process</span><button id="clearData" class="text-btn">Clear saved entries</button></div></footer>
+<script>window.CS110_BUNDLED_DATA = {"version":1,"exportedAt":"2026-09-24T23:40:32.783Z","fields":{"recap1":"\nYou will not get everything right away there will be confusion and gaps in knowledge but simply walking over the gaps and walking forward is what will enable you to progress and overcome.","recap2":"You must put yourself in different mindsets and one way that might be helpful is to put on different \"hats\". This could be a style hat for making your site look pretty and easy to use or a logical hat for problem solving and  web development.","recap3":"Tools and reusable packages fit together because it forms a software supply chain, where tools manage, build, and run the packages that developers write.","recap4":"A request flow is the step-by-step path an HTTP request takes from, like a web browser,  to a server and back again. A response flow is the path that data travels when a system receives a request, processes it, and sends the final answer back to the user or application.","appName":"Site ABC","audience":"Newcomers","purpose":"It should help explain some of the difficulties a newcomer should face so they could over come it easier.","theme":"Educational ","whiteboard":"Click a button and the 3D sphere explodes","github":"https://github.com/Ohio-Rizz/Week-5-Website-Explode-","interaction":"It allows the user to send the signal to explode the sphere.","threeDChange":"I added an extra element to the sphere allowing it to explode, In addition the sphere is blue.","htmlRole":"It acts as the skeleton and acts as a guide for everything else.","cssRole":"It acts as the style giving everything a much needed tune up.","jsRole":"It acts as the brain.","threeDRoles":"It shows how lighting reflects on a sphere.","peer":"Caleb","unclear":"Nothing, all worked as intended.","revision":"We made no new changes.","discordLink":"https://discord.com/channels/500098118415810560/876709519810494476/1552818579202908251","discordText":"Calebs is here:https://discord.com/channels/500098118415810560/876709519810494476/1552801436545450074","discordEvidence":"","finalGithub":"https://github.com/Ohio-Rizz/Week-5-Website-Explode-","siteLink":"Index.html","receipt":"In the Github its for both me and Caleb.","instructorAccess":"Yes."},"checks":{"links":true,"desktop":true,"narrow":true,"keyboard":true,"console":true,"finalRecap":true,"finalApp":true,"final3d":true,"finalTest":true,"finalEvidence":true,"finalDiscord":true,"finalReceipt":true}};</script>\n<script src="script.js"></script>
+</body>
+</html>
